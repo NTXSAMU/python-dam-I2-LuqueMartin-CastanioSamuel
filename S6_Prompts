@@ -1,0 +1,19 @@
+1 -> Necesito que crees un código del lenguaje de Python, en el contexto de crear una tienda de coches en este caso se tratará de un concesionario, 
+donde se deberá mostrar los coches de estos mismos y además deberá contar con funciones de insertarModeloCoche, modificarModeloCoche, eliminarRegistros.
+ Para realizar el código deberás emplear el uso de diccionarios recorriendo por ellos con un .key .values y .items 
+| NO QUIERO QUE APAREZCA DUALIDAD EN EL PROGRAMA ES DECIR TODO DENTRO SIN FUNCIONES además ni siquiera hace falta que marques el main.
+
+2 -> Sin usar objetos en el código, crea un programa en Python que simule una tienda de coches (concesionario) utilizando diccionarios.
+
+3 -> Añade 10 coches más. 
+
+4 -> Quiero que la salida a consola sea mucho más bonita y clara además el usuario es el que podrá decidir que modelo querrá modificar o insertar
+
+5 -> Quiero que el programa se repita hasta que el usuario no desee cerrar el programa para ello debera usar un while true.
+
+6 -> Ahora quiero que a la hora de mostrar las ids y los valores aparezcan juntos sin estar separados.
+
+7 -> Ahora como añadido quiero que a la hora de salir del programa me diga el nombre del usuario que esta ejecutando el programa 
+     para ello deberemos ver el nombre del usuario del equipo
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
