@@ -16,4 +16,6 @@ donde se deberá mostrar los coches de estos mismos y además deberá contar con
 7 -> Ahora como añadido quiero que a la hora de salir del programa me diga el nombre del usuario que esta ejecutando el programa
      para ello deberemos ver el nombre del usuario del equipo, además se debe incluir una media , una suma y un precio máximo de los coches que hay en el concesionario.
 
+8 -> Ahora con diccionarios anidados. 
+
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
