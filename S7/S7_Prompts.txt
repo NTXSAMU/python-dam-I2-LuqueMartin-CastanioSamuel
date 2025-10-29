@@ -1,0 +1,37 @@
+1. Hola muy buenas tardes caballero, necesito crear un módulo en el lenguaje de programación Python en el que se pueda analizar una lista de precios, 
+este módulo debe de ser capaz de realizar múltiples funciones para trabajar con la lista (Sin repetir cálculos). Después se deberá crear un programa
+ llamado precio.py en el que se utilice el módulo creado.
+ Nota: Para este código no manejes Errores ya que se le añadirán cuando te lo requiera. El programa de el módulo ha de llamarse auxprecios.py.
+
+ 2. Ahora con los códigos que has generado quiero que hagas un manejo de errores en el que se modifiquen los módulos anteriores para que sean más robustos. 
+ Se debe usar try , except , else , finally y raise. 
+ Se ha de crear dos casos de prueba donde se produzcan errores y el código no se rompa.
+ 
+3. Explicame el siguiente bloque de código: def obtener_datos_basicos(lista_precios):
+    try:
+        if not isinstance(lista_precios, list):
+            raise TypeError("El parámetro debe ser una lista.")
+        if not all(isinstance(p, (int, float)) for p in lista_precios):
+            raise ValueError("Todos los elementos deben ser números.")
+        if len(lista_precios) == 0:
+            raise ValueError("La lista está vacía.")
+
+        cantidad = len(lista_precios)
+        suma_total = sum(lista_precios)
+        promedio = suma_total / cantidad
+
+    except (TypeError, ValueError) as e:
+        print(f"Error en obtener_datos_basicos: {e}")
+        return None
+    else:
+        return {
+            "cantidad": cantidad,
+            "suma_total": suma_total,
+            "promedio": promedio
+        }
+    finally:
+        print("Ejecución finalizada en obtener_datos_basicos.")
+    ---------------------------------------------------------------------------------------------------------------------------------------------------------------
+4. Además quiero que añadas al código una función de análisis 
+avanzado en el que muestres el rango y la mediana de la lista.
+ 
