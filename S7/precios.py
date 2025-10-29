@@ -1,35 +1,26 @@
 # precios.py
-# Programa que utiliza el módulo auxprecios.py con manejo de errores
+# Programa principal que usa auxprecios.py
 
-import auxprecios
+import auxprecios as ap
 
-print("=== CASO 1: Lista de precios válida ===")
-precios = [23.5, 45.9, 12.0, 89.4, 56.7, 34.2, 12.0, 78.5]
+def main():
+    precios = [10, 20, 30, 40, 50]
 
-datos = auxprecios.obtener_datos_basicos(precios)
-if datos:
-    print(f"Cantidad: {datos['cantidad']}")
-    print(f"Suma total: {datos['suma_total']}")
-    print(f"Promedio: {datos['promedio']}")
+    print("📊 Datos básicos:")
+    print(ap.obtener_datos_basicos(precios))
 
-print(f"Precio máximo: {auxprecios.precio_maximo(precios)}")
-print(f"Precio mínimo: {auxprecios.precio_minimo(precios)}")
-print(f"Precios mayores que 50: {auxprecios.precios_mayores_que(precios, 50)}")
-print(f"Precios menores que 20: {auxprecios.precios_menores_que(precios, 20)}")
-print(f"Precios ordenados (descendente): {auxprecios.ordenar_precios(precios, True)}")
-print(auxprecios.analisis_avanzado(precios))
+    print("\n💰 Precio máximo y mínimo:")
+    print("Máximo:", ap.precio_maximo(precios))
+    print("Mínimo:", ap.precio_minimo(precios))
 
+    print("\n🔼 Orden ascendente:", ap.ordenar_precios(precios))
+    print("🔽 Orden descendente:", ap.ordenar_precios(precios, True))
 
-# ------------------------------------------------------------
-print("\n=== CASO 2: Lista con errores (controlados) ===")
+    print("\n📈 Precios mayores que 25:", ap.precios_mayores_que(precios, 25))
+    print("📉 Precios menores que 25:", ap.precios_menores_que(precios, 25))
 
-# Caso de error 1: lista vacía
-lista_vacia = []
-auxprecios.obtener_datos_basicos(lista_vacia)
+    print("\n📊 Análisis avanzado:")
+    print(ap.analisis_avanzado(precios))
 
-# Caso de error 2: lista con datos inválidos
-lista_invalida = [20, "error", 50, None]
-auxprecios.obtener_datos_basicos(lista_invalida)
-
-# Caso de error 3: límite no numérico
-auxprecios.precios_mayores_que(precios, "cincuenta")
+if __name__ == "__main__":
+    main()
