@@ -1,0 +1,76 @@
+1_ Contexto: Estamos aprendiendo en python a como desarrollar diccionarios con varios valores, de manera "sencilla" por el momento.
+
+Necesito que desarrolles una práctica de un diccionario aplicado para un taller que contiene mecánicos, camareros y encargados de pistas, este diccionario 
+deberá tener varios registros y al menos tres campos. Además deberá de contener funciones tales que añadir registros, buscar registro por campo, calcular una
+ estadística (en este caso deberá ser la prima en función de las horas trabajadas a la semana). Además deberás controlas los errores a la hora de insertar valores 
+ ya sean si son duplicados, vacíos o incorrectos. Todo esto debe poder ejecutarse hasta que quiera salir del programa además de tener una apariencia bonita en consola.
+
+Como añadido quiero que me digas un ejemplo práctico para una estructura inversa, es decir, diccionario de listas, en las que expliques las diferencias entre una y otras.
+
+2_ Explicame la siguiente funcion paso a paso:
+
+def buscar_empleado():
+    limpiar()
+    print("=== BÚSQUEDA DE EMPLEADO ===")
+    campo = input("Buscar por (id/nombre/rol): ").strip().lower()
+    valor = input("Valor a buscar: ").strip().lower()
+
+    encontrados = []
+    for id_emp, datos in empleados.items():
+        if campo == "id" and id_emp.lower() == valor:
+            encontrados.append((id_emp, datos))
+        elif campo in datos and str(datos[campo]).lower() == valor:
+            encontrados.append((id_emp, datos))
+
+    if encontrados:
+        print("\n=== RESULTADOS ===")
+        for id_emp, datos in encontrados:
+            print(f"ID: {id_emp} | Nombre: {datos['nombre']} | Rol: {datos['rol']} | Horas: {datos['horas']}")
+    else:
+        print("❌ No se encontraron coincidencias.")
+
+
+3_ Del programa que has desarrollado quiero que me muestres por consola la opcion buscar_empleado
+
+4_ Quiero que los registros se puedan ver en la consola tanto de windows como de Linux, además de porder ejecutarse como funciones, por cada ejecución se debe limpiar la consola.
+
+5_ Explicame esta parte del código (os.system("cls" if os.name == "nt" else "clear"))
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+EXPLICACION DE PARTE INVERSA 
+
+Estructura inversa: Diccionario de listas
+
+En el código anterior usamos una estructura tipo “diccionario de diccionarios”, donde cada clave es el ID del empleado y el valor son sus datos.
+
+Tiene la siguiente pinta: empleados = {
+    "E01": {"nombre": "Juan", "rol": "mecánico", "horas": 42},
+    "E02": {"nombre": "Ana", "rol": "camarero", "horas": 38}
+}
+
+Pero ahora queremos el caso inverso qué es el siguiente 
+
+Estructura inversa: “diccionario de listas”
+
+Tiene la siguiente pinta : 
+
+empleados_inverso = {
+    "id": ["E01", "E02"],
+    "nombre": ["Juan", "Ana"],
+    "rol": ["mecánico", "camarero"],
+    "horas": [42, 38]
+}
+
+QUE DIFERENECIAS PODEMOS ENCONTRAR
+
+Aspecto     	        Diccionario de diccionarios         	              Diccionario de listas
+
+Organización	        Cada clave representa un empleado completo  	      Cada lista almacena un campo de todos los empleados
+
+Ideal para  	        Acceder a los datos de un empleado concreto	          Analizar o recorrer un campo en todos los empleados
+
+Ejemplo de acceso   	empleados["E01"]["rol"] → "mecánico"	              empleados_inverso["rol"][0] → "mecánico"
+
+Usos comunes	        CRUD (crear, leer, actualizar, eliminar registros)	  Estadísticas o procesamiento masivo de columnas
