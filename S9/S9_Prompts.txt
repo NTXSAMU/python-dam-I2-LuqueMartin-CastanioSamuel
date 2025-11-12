@@ -1,0 +1,9 @@
+1_ Contexto soy nuevo en el mundo de Python por lo que las respuestas que quiero que
+ me des sean lo más simples posibles, además con todo comentado y documentado dentro del código, para esta ocasión te voy a pedir un
+  código en Python que trata sobre el siguiente tema : - Generador de personajes de videojuegos. Para crear dicho código debes seguir 
+  unos requisitos : -> tener al menos 3 funciones en el código (funciones simples que devuelvan un valor) , se deben controlar 
+los errores haciendo uso de try / except | y a lo largo del desarrollo del 
+código debes utilizar un módulo standart como puede llegar a ser datetime, math, random.
+
+2-   poder = math.sqrt(f*2 + d*1.5 + i*2.5) * 1.2
+        return round(poder, 2)  || explicame esta linea
