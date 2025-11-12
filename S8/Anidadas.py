@@ -3,7 +3,8 @@
 # ======================================================
 # Diccionario de empleados
 # Cada clave será un ID (único)
-# Cada valor será otro diccionario con información del empleado
+# Cada valor será una lista con la información del empleado:
+# [nombre, rol, horas]
 # ======================================================
 
 import os
@@ -42,11 +43,7 @@ def agregar_empleado():
         print("⚠️ Valor de horas no válido.")
         return
 
-    empleados[id_emp] = {
-        "nombre": nombre,
-        "rol": rol,
-        "horas": horas
-    }
+    empleados[id_emp] = [nombre, rol, horas]
 
     print(f"✅ Empleado '{nombre}' agregado correctamente.")
 
@@ -58,16 +55,21 @@ def buscar_empleado():
     valor = input("Valor a buscar: ").strip().lower()
 
     encontrados = []
+
     for id_emp, datos in empleados.items():
+        nombre, rol, horas = datos
         if campo == "id" and id_emp.lower() == valor:
             encontrados.append((id_emp, datos))
-        elif campo in datos and str(datos[campo]).lower() == valor:
+        elif campo == "nombre" and nombre.lower() == valor:
+            encontrados.append((id_emp, datos))
+        elif campo == "rol" and rol.lower() == valor:
             encontrados.append((id_emp, datos))
 
     if encontrados:
         print("\n=== RESULTADOS ===")
         for id_emp, datos in encontrados:
-            print(f"ID: {id_emp} | Nombre: {datos['nombre']} | Rol: {datos['rol']} | Horas: {datos['horas']}")
+            nombre, rol, horas = datos
+            print(f"ID: {id_emp} | Nombre: {nombre} | Rol: {rol} | Horas: {horas}")
     else:
         print("❌ No se encontraron coincidencias.")
 
@@ -81,11 +83,10 @@ def calcular_prima():
 
     try:
         id_emp = input("Introduce el ID del empleado: ").strip()
-        emp = empleados[id_emp]
-        horas = emp["horas"]
+        nombre, rol, horas = empleados[id_emp]
         # Prima simple: 1000€ por hora extra por encima de 6h
         prima = max(0, (horas - 6) * 1000)
-        print(f"Empleado: {emp['nombre']} ({emp['rol']})")
+        print(f"Empleado: {nombre} ({rol})")
         print(f"Horas: {horas}h | Prima: {prima:.2f}€")
     except KeyError:
         print("⚠️ ID no encontrado.")
@@ -100,7 +101,8 @@ def mostrar_empleados():
         print("⚠️ No hay empleados registrados.")
         return
     for id_emp, datos in empleados.items():
-        print(f"{id_emp} -> {datos['nombre']} | {datos['rol']} | {datos['horas']}h")
+        nombre, rol, horas = datos
+        print(f"{id_emp} -> {nombre} | {rol} | {horas}h")
 
 # Menú principal
 def menu():
