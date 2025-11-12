@@ -7,3 +7,5 @@ código debes utilizar un módulo standart como puede llegar a ser datetime, mat
 
 2-   poder = math.sqrt(f*2 + d*1.5 + i*2.5) * 1.2
         return round(poder, 2)  || explicame esta linea
+
+Extra : Como añadido personal quiero también indicar el tipo de arma que llevaran dichos personajes
