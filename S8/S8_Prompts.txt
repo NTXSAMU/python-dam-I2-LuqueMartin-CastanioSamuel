@@ -43,14 +43,12 @@ EXPLICACION DE PARTE INVERSA
 
 Estructura inversa: Diccionario de diccionarios
 
-En el código anterior usamos una estructura tipo “diccionario de diccionarios”, donde cada clave es el ID del empleado y el valor son sus datos.
 
 Tiene la siguiente pinta: empleados = {
     "E01": {"nombre": "Juan", "rol": "mecánico", "horas": 42},
     "E02": {"nombre": "Ana", "rol": "camarero", "horas": 38}
 }
 
-Pero ahora queremos el caso inverso qué es el siguiente 
 
 Estructura inversa: “diccionario de listas”
 
