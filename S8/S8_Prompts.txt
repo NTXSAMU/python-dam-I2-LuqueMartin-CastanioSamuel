@@ -41,7 +41,7 @@ def buscar_empleado():
 
 EXPLICACION DE PARTE INVERSA 
 
-Estructura inversa: Diccionario de listas
+Estructura inversa: Diccionario de diccionarios
 
 En el código anterior usamos una estructura tipo “diccionario de diccionarios”, donde cada clave es el ID del empleado y el valor son sus datos.
 
